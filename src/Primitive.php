@@ -18,11 +18,7 @@ class Primitive
 
         $function = static::$staticMethods[$name];
 
-        var_dump($function(...$arguments));
-        var_dump($arguments);
-        var_dump(is_bool(false));
-        var_dump(call_user_func_array($function, $arguments));
-        return call_user_func_array($function, $arguments);
+        return $function(...$arguments);
     }
 
     /**
