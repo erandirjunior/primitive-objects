@@ -21,6 +21,17 @@ class Primitive
         return $function(...$arguments);
     }
 
+    public function __call($name, $arguments)
+    {
+        if (!isset($this->objectMethods[$name])) {
+            throw new \Exception("Function `{$name}` not found");
+        }
+
+        $function = $this->objectMethods[$name];
+
+        return $function($this->value, ...$arguments);
+    }
+
     /**
      * @return mixed
      */
