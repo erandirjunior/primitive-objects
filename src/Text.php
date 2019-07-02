@@ -2,7 +2,7 @@
 
 namespace Primitive;
 
-class String
+class Text extends Primitive
 {
     public function __construct(string $value)
     {
